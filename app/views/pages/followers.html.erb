@@ -2,7 +2,7 @@
 
 <ul>
 	<% @user.followers.each do |f| %>
-		<li><%= f.email %></li>
+		<li><%= link_to "#{f.email}", user_path(@user)  %></li>
 	<% end %>
 </ul>	
 
