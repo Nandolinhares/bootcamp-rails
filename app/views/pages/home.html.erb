@@ -6,8 +6,7 @@
 
 
 		<h2>Lista de Tweets</h2>
-			<h3>Followers (<%= @user.followers.count %>)</h3>
-
+		<p><%= link_to "Followers", followers_users_path(@user) %> (<%= @user.followers.count %>)</p>
 
 		<%= form_for @tweet do |f| %>
 			<%= f.text_field :content %>

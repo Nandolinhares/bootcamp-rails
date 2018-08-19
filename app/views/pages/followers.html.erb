@@ -1,0 +1,9 @@
+<h1>Followers de <%= @user.email %></h1>
+
+<ul>
+	<% @user.followers.each do |f| %>
+		<li><%= f.email %></li>
+	<% end %>
+</ul>	
+
+<p><%= link_to "Home", root_path %></p>

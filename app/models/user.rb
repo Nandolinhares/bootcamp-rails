@@ -13,5 +13,21 @@ class User < ApplicationRecord
                                    foreign_key: "followed_id",
                                    dependent:   :destroy
   has_many :following, through: :active_relationships,  source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower   
+  has_many :followers, through: :passive_relationships, source: :follower 
+
+  def following?(other_user)
+  	#Este método checa se um usuário está seguindo o outro
+  	following.include? other_user
+  end 
+
+  def follow!(other_user)
+  	#Este método criará o relacionamento entre um usuário e outro
+  	#active_relationships.create(followed: other_user)
+  	following << other_user
+  end
+
+  def unfollow!(other_user)
+  	#Este método apagará o relacionamento entre um usuário e outro
+  	following.destroy(other_user)
+  end
 end

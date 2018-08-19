@@ -2,7 +2,7 @@
 
 <h2>Tweets (<%= @user.tweets.count %>)</h2>
 
-	<h3>Followers (<%= @user.followers.count %>)</h3>
+	<p><%= link_to "Followers", followers_users_path(@user) %> (<%= @user.followers.count %>)</p>
 
 
 	<% if @user.tweets.empty? %>
