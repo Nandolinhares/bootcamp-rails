@@ -2,6 +2,9 @@
 
 <h2>Tweets (<%= @user.tweets.count %>)</h2>
 
+	<h3>Followers (<%= @user.followers.count %>)</h3>
+
+
 	<% if @user.tweets.empty? %>
 		<p>Usuário ainda não tem tweets</p>
 	<% else %>

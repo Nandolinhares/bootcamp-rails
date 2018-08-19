@@ -1,10 +1,13 @@
 <h1>Estamos na Home</h1>
 
 	<%if user_signed_in?%>
-		Olá, <%= current_user.email %>
+		Olá, <%= current_user.email %> 
 		<hr>
 
+
 		<h2>Lista de Tweets</h2>
+			<h3>Followers (<%= @user.followers.count %>)</h3>
+
 
 		<%= form_for @tweet do |f| %>
 			<%= f.text_field :content %>
